@@ -432,13 +432,6 @@ export class Cluster extends ClusterBase {
     }
 
     if (
-      props.clientAuthentication?.saslProps?.iam &&
-      props.clientAuthentication?.saslProps?.scram
-    ) {
-      throw Error('Only one client authentication method can be enabled.');
-    }
-
-    if (
       props.encryptionInTransit?.clientBroker ===
         ClientBrokerEncryption.PLAINTEXT &&
       props.clientAuthentication
